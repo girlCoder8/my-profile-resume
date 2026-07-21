@@ -23,7 +23,7 @@
   "private": true,
   "license": "MIT",
   "engines": {
-    "node": ">=14.x"
+    "node": ">=24.x"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",

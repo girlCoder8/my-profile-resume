@@ -80,13 +80,6 @@ function GithubSection() {
         >
           <MyFrameMotion>
             <Image
-              src="https://github-readme-stats.vercel.app/api/top-langs/?username=girlCoder8&langs_count=8&count_private=true&layout=compact&theme=react&hide_border=true&bg_color=0D1117"
-              alt="My Popular Languages"
-            />
-          </MyFrameMotion>
-
-          <MyFrameMotion>
-            <Image
               src="https://github-readme-streak-stats.herokuapp.com/?user=girlCoder8&theme=black-ice&hide_border=true&stroke=0000&background=060A0CD0"
               alt="my GitHub Stats"
             />

@@ -11,7 +11,7 @@ import {
   ThemeIcon,
   Title,
 } from '@mantine/core'
-import { IconSchool } from '@tabler/icons'
+import { IconSchool } from '@tabler/icons-react'
 import React from 'react'
 import educationStyles from './styles'
 

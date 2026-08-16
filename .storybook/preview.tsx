@@ -1,14 +1,18 @@
+import * as React from 'react';
+import type { Decorator } from '@storybook/react';
 import { useDarkMode } from 'storybook-dark-mode';
 import { MantineProvider, ColorSchemeProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 
 export const parameters = { layout: 'fullscreen' };
 
-function ThemeWrapper(props: { children: React.ReactNode }) {
+function ThemeWrapper(props: { children: React.ReactNode }): React.ReactElement {
+  const isDark = useDarkMode();
+
   return (
-    <ColorSchemeProvider colorScheme="light" toggleColorScheme={() => {}}>
+    <ColorSchemeProvider colorScheme={isDark ? 'dark' : 'light'} toggleColorScheme={() => {}}>
       <MantineProvider
-        theme={{ colorScheme: useDarkMode() ? 'dark' : 'light' }}
+        theme={{ colorScheme: isDark ? 'dark' : 'light' }}
         withGlobalStyles
         withNormalizeCSS
       >
@@ -18,4 +22,6 @@ function ThemeWrapper(props: { children: React.ReactNode }) {
   );
 }
 
-export const decorators = [(renderStory: Function) => <ThemeWrapper>{renderStory()}</ThemeWrapper>];
+export const decorators: Decorator[] = [
+  (renderStory, context) => <ThemeWrapper>{renderStory(context)}</ThemeWrapper>,
+];
